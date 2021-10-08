@@ -1,7 +1,8 @@
 <p>server page</p>
 
-<input name="username" [(ngModel)]="userName"/>
+<button class="btn btn-primary" (click)="addParagraph()">Display Details</button>
 
-<p>The username is {{userName}}</p>
+<div *ngFor="let value of stringList; index as i">
+    <p [ngClass]="{customPara : i >= 5}">{{value}}</p>
+</div>
 
-<button class="btn btn-primary" [disabled]="userName === ''" (click)="userName= ''">Reset</button>
