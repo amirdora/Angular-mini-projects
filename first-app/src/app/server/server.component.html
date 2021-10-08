@@ -1,5 +1,7 @@
 <p>server page</p>
 
-<input name="first" [(ngModel)]="serverName"/>
+<input name="username" [(ngModel)]="userName"/>
 
-<p>{{serverName}}</p>
+<p>The username is {{userName}}</p>
+
+<button class="btn btn-primary" [disabled]="userName === ''" (click)="userName= ''">Reset</button>

@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
-  serverName = "abc"
+  userName = ""
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 
 }
