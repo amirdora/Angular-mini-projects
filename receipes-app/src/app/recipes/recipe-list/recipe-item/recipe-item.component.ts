@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-receipe-item',
-  templateUrl: './receipe-item.component.html',
-  styleUrls: ['./receipe-item.component.css']
+  selector: 'app-recipe-item',
+  templateUrl: './recipe-item.component.html',
+  styleUrls: ['./recipe-item.component.css']
 })
 export class ReceipeItemComponent implements OnInit {
 

@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './main/app.component';
 import { headerComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping/shopping-edit/shopping-edit.component';
-import { ReceipeListComponent } from './receipes/receipe-list/receipe-list.component';
-import { ReceipeItemComponent } from './receipes/receipe-list/receipe-item/receipe-item.component';
-import { ReceipeDetailComponent } from './receipes/receipe-detail/receipe-detail.component';
+import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipeComponent } from './recipes/recipes.component';
+import { ShoppingListComponent } from './shopping/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -15,9 +15,10 @@ import { ReceipeDetailComponent } from './receipes/receipe-detail/receipe-detail
     headerComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    ReceipeListComponent,
-    ReceipeItemComponent,
-    ReceipeDetailComponent
+    RecipeListComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule
