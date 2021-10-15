@@ -97,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "componentDataBinding2/node_modules/bootstrap/dist/css/bootstrap.min",
               "src/styles.css"
             ],
             "scripts": []
