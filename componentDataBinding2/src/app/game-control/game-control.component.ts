@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { interval } from 'rxjs';
 
@@ -9,6 +9,9 @@ import { interval } from 'rxjs';
 })
 export class GameControlComponent implements OnInit {
 
+  @Output() onEventEmit = new EventEmitter<number>();
+
+
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
   currentNumber: number = 0
@@ -17,6 +20,7 @@ export class GameControlComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   setInterval() {
@@ -32,7 +36,7 @@ export class GameControlComponent implements OnInit {
     } else {
       this.oddNumbers.push(this.currentNumber)
     }
-    console.log(this.currentNumber)
+    this.onEventEmit.emit(this.currentNumber)
   }
 
   pauseInterval() {

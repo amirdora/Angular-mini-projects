@@ -1,5 +1,7 @@
 <div class="container">
     <div class="row">
-        <app-game-control></app-game-control>
+        <p>Event emitter child to parent value {{emittedNumber}}</p>
+
+        <app-game-control (onEventEmit)="eventEmitterCatch($event)"></app-game-control>
     </div>
 </div>
