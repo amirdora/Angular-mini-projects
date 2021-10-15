@@ -9,8 +9,9 @@ import { interval } from 'rxjs';
 })
 export class GameControlComponent implements OnInit {
 
-  currentValue: number[] = [];
-  randomNumber: number = 0
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+  currentNumber: number = 0
   mySubscription: Subscription = new Subscription;
 
   constructor() { }
@@ -20,18 +21,18 @@ export class GameControlComponent implements OnInit {
 
   setInterval() {
     this.mySubscription = interval(1000).subscribe((x => {
+      this.currentNumber++
       this.generateRandom();
     }));
   }
   
   generateRandom() {
-    this.randomNumber = Math.ceil(this.getRandomArbitrary(0, 2))
-    this.currentValue.push(this.randomNumber)
-    console.log(this.randomNumber)
-  }
-
-  getRandomArbitrary(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+    if(this.currentNumber % 2 === 0){
+      this.evenNumbers.push(this.currentNumber)
+    } else {
+      this.oddNumbers.push(this.currentNumber)
+    }
+    console.log(this.currentNumber)
   }
 
   pauseInterval() {

@@ -1,10 +1,20 @@
-<button type="button" (click)="setInterval()">Start</button>
-<button type="button">Pause</button>
+<div class="row">
+    <button class="btn btn-success mr-1" (click)="setInterval()">Start</button>
+    <button class="btn btn-warning ml-1" (click)="pauseInterval()">Pause</button>
 
+    <div class="row">
 
+        <div class="col-md-2">
+            <div *ngFor="let data of oddNumbers">
+                <app-odd [item]="data"></app-odd>
+            </div>
+        </div>
 
-<div *ngFor="let data of currentValue">
-    <app-odd [item]="data"></app-odd>
-    <app-even [item]="data"></app-even>
+        <div class="col-md-2">
+            <div *ngFor="let data of evenNumbers">
+                <app-even [item]="data"></app-even>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+    </div>
 </div>
-
