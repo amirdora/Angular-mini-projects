@@ -1,2 +1,10 @@
-<button type="button">Start</button>
+<button type="button" (click)="setInterval()">Start</button>
 <button type="button">Pause</button>
+
+
+
+<div *ngFor="let data of currentValue">
+    <app-odd [item]="data"></app-odd>
+    <app-even [item]="data"></app-even>
+</div>
+
