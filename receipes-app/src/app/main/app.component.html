@@ -1,9 +1,13 @@
-<app-header></app-header>
+<app-header (onMenuClicked)="doSomething($event)"></app-header>
 
 <div class="container">
 
-    <app-recipes></app-recipes>
+    <div *ngIf="isShopping === true else elseBlock">
+        <app-shopping-list></app-shopping-list>
+    </div>
 
-    <app-shopping-list></app-shopping-list>
+    <ng-template #elseBlock>
+        <app-recipes></app-recipes>
+    </ng-template>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: "app-header",
@@ -7,4 +7,9 @@ import { Component } from "@angular/core";
 })
 export class headerComponent {
 
+    @Output() onMenuClicked = new EventEmitter<boolean>();
+
+    setClickedValue(isShopping: boolean) {
+        this.onMenuClicked.emit(isShopping)
+    }
 }
