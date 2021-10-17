@@ -2,12 +2,7 @@
 
 <div class="container">
 
-    <div *ngIf="isShopping === true else elseBlock">
-        <app-shopping-list></app-shopping-list>
-    </div>
-
-    <ng-template #elseBlock>
-        <app-recipes></app-recipes>
-    </ng-template>
-
+    <app-shopping-list *ngIf="isShopping"></app-shopping-list>
+    <app-recipes *ngIf="!isShopping"></app-recipes>
+    
 </div>
