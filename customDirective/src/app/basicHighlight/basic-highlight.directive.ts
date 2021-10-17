@@ -10,5 +10,9 @@ export class basicHighLightDirective implements OnInit {
     }
     ngOnInit() {
         this.elementRef.nativeElement.style.backgroundColor = 'green'
+        this.elementRef.nativeElement.style.color = 'white'
+        this.elementRef.nativeElement.style.padding = '10px'
+
     }
+
 }
