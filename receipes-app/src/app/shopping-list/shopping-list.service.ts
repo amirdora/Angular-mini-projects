@@ -11,8 +11,13 @@ export class ShoppingListService{
           return this.ingredients;
       }
 
-      addIngredients(ingredient : Ingredient){
+      addIngredient(ingredient : Ingredient){
         this.ingredients.push(ingredient);
         console.log("ingredient added");
+      }
+
+      addIngredients(ingredients : Ingredient[]){
+        this.ingredients.push(...ingredients);
+        console.log("all ingredients added");
       }
 }
