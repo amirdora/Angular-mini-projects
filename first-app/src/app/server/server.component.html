@@ -1,8 +1,0 @@
-<p>server page</p>
-
-<button class="btn btn-primary" (click)="addParagraph()">Display Details</button>
-
-<div *ngFor="let value of stringList; index as i">
-    <p [ngClass]="{customPara : i >= 5}">{{value}}</p>
-</div>
-
