@@ -6,11 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'receipes-app';
-  isShopping: boolean = false;
+  loadedFeature = 'recipe';
 
-  public doSomething(isShopping: boolean) {
-    this.isShopping = isShopping
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
   }
-
 }

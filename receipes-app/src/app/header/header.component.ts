@@ -1,15 +1,13 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: "app-header",
-    templateUrl: "./header.component.html",
-    styleUrls: ["./header.component.css"]
+  selector: 'app-header',
+  templateUrl: './header.component.html'
 })
-export class headerComponent {
+export class HeaderComponent {
+  @Output() featureSelected = new EventEmitter<string>();
 
-    @Output() onMenuClicked = new EventEmitter<boolean>();
-
-    setClickedValue(isShopping: boolean) {
-        this.onMenuClicked.emit(isShopping)
-    }
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
+  }
 }
