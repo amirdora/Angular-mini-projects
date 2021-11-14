@@ -1,19 +1,49 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onFormSubmit()">
-        <input class="form-control" type="email" placeholder="type your email" ngModel name="email" required />
-        <input class="form-control" type="password" placeholder="type your passowrd" ngModel name="password" required/>
-
-        <select class="form-select" aria-label="Default select example">
+      
+      <form (ngSubmit)="onFormSubmit()" class="m-5" #f="ngForm">
+        <input 
+          class="form-control" 
+          type="email" 
+          placeholder="type your email" 
+          ngModel 
+          name="email" 
+          required 
+          email/>
+        <input 
+          class="form-control mt-2" 
+          type="password" 
+          placeholder="type your passowrd" 
+          ngModel 
+          name="password" 
+          required/>
+        <div class="form-group">
+          <label for="secret">Secret Question: </label>
+        <select 
+          id="secret"
+          [ngModel]="defaultQuestion"
+          name="secret"
+          class="form-select mt-2" 
+          [ngModel]="defaultQuestion">
           <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="basic">Basic</option>
+          <option value="advanced">Advanced</option>
+          <option value="pro">Pro</option>
         </select>
-        
-        <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+      </div>
+        <button class="btn btn-primary mt-2" type="submit" [disabled] = "!f.valid">Submit</button>
+      
+
+        <div *ngIf="submited" class="mt-4">
+          <h1>Submitted user data :</h1>
+          <p>user email : {{user.email}}</p>
+          <p>user email : {{user.password}}</p>
+          <p>user secret : {{user.secret}}</p>
+
+        </div>
+
+      </form>
 
 
       <!-- Add a Form with the following Inputs (and Validators)
